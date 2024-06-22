@@ -10,6 +10,7 @@ export const users = [
   {
     id: "c296c6c0-5c59-40dd-aa8a-ef2b015b7502",
     name: faker.name.fullName(),
+    email: faker.internet.email(),
     avatar_url: faker.image.avatar(),
   },
   {

@@ -23,7 +23,7 @@ async function main() {
         data: {
           id: user.id,
           name: user.name,
-          email: user.email ?? "",
+          email: user.email,
           avatarUrl: user.avatar_url,
         },
       });

@@ -5,7 +5,7 @@ export const books = [
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
     coverUrl:
-      "public/images/books/14-habitos-de-desenvolvedores-altamente-produtivos.jpg",
+      "/images/books/14-habitos-de-desenvolvedores-altamente-produtivos.jpg",
     slug: "14-habitos-de-desenvolvedores-altamente-produtivos",
     totalPages: 160,
     author: {
@@ -31,7 +31,7 @@ export const books = [
     name: "O Hobbit",
     description:
       "Semper et sapien proin vitae nisi. Feugiat neque integer donec et aenean posuere amet ultrices. Cras fermentum id pulvinar varius leo a in. Amet libero pharetra nunc elementum fringilla velit ipsum. Sed vulputate massa velit nibh",
-    coverUrl: "public/images/books/o-hobbit.jpg",
+    coverUrl: "/images/books/o-hobbit.jpg",
     slug: "o-hobbit",
     totalPages: 360,
     author: {
@@ -57,7 +57,7 @@ export const books = [
     name: "O guia do mochileiro das galáxias",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/o-guia-do-mochileiro-das-galaxias.jpg",
+    coverUrl: "/images/books/o-guia-do-mochileiro-das-galaxias.jpg",
     slug: "o-guia-do-mochileiro-das-galaxias",
     totalPages: 250,
     author: {
@@ -83,7 +83,7 @@ export const books = [
     name: "A revolução dos bichos",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/a-revolucao-dos-bichos.jpg",
+    coverUrl: "/images/books/a-revolucao-dos-bichos.jpg",
     slug: "a-revolucao-dos-bichos",
     totalPages: 350,
     author: {
@@ -109,7 +109,7 @@ export const books = [
     name: "O fim da eternidade",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/o-fim-da-eternidade.jpg",
+    coverUrl: "/images/books/o-fim-da-eternidade.jpg",
     slug: "o-fim-da-eternidade",
     totalPages: 165,
     author: {
@@ -135,7 +135,7 @@ export const books = [
     name: "Entendendo Algoritmos",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/entendendo-algoritmos.jpg",
+    coverUrl: "/images/books/entendendo-algoritmos.jpg",
     slug: "entendendo-algoritmos",
     totalPages: 165,
     author: {
@@ -161,7 +161,7 @@ export const books = [
     name: "Código Limpo",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/codigo-limpo.jpg",
+    coverUrl: "/images/books/codigo-limpo.jpg",
     slug: "codigo-limpo",
     totalPages: 365,
     author: {
@@ -187,7 +187,7 @@ export const books = [
     name: "O poder do hábito",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/o-poder-do-habito.jpg",
+    coverUrl: "/images/books/o-poder-do-habito.jpg",
     slug: "o-poder-do-habito",
     totalPages: 288,
     author: {
@@ -213,7 +213,7 @@ export const books = [
     name: "Arquitetura limpa",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/arquitetura-limpa.jpg",
+    coverUrl: "/images/books/arquitetura-limpa.jpg",
     slug: "arquitetura-limpa",
     totalPages: 288,
     author: {
@@ -239,7 +239,7 @@ export const books = [
     name: "Histórias extraordinárias",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/historias-extraordinarias.jpg",
+    coverUrl: "/images/books/historias-extraordinarias.jpg",
     slug: "historias-extraordinarias",
     totalPages: 332,
     author: {
@@ -265,7 +265,7 @@ export const books = [
     name: "Refatoração",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/refatoracao.jpg",
+    coverUrl: "/images/books/refatoracao.jpg",
     slug: "refatoracao",
     totalPages: 332,
     author: {
@@ -291,7 +291,7 @@ export const books = [
     name: "Domain-Driven Design",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/domain-driven-design.jpg",
+    coverUrl: "/images/books/domain-driven-design.jpg",
     slug: "domain-driven-design",
     totalPages: 288,
     author: {
@@ -317,7 +317,7 @@ export const books = [
     name: "Viagem ao Centro da Terra",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/viagem-ao-centro-da-terra.jpg",
+    coverUrl: "/images/books/viagem-ao-centro-da-terra.jpg",
     slug: "viagem-ao-centro-da-terra",
     totalPages: 288,
     author: {
@@ -343,7 +343,7 @@ export const books = [
     name: "Fragmentos do Horror",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/fragmentos-do-horror.jpg",
+    coverUrl: "/images/books/fragmentos-do-horror.jpg",
     slug: "fragmentos-do-horror",
     totalPages: 144,
     author: {
@@ -369,7 +369,7 @@ export const books = [
     name: "O Programador Pragmático",
     description:
       "Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis. Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit porta eget nec vitae sit vulputate eget",
-    coverUrl: "public/images/books/o-programador-pragmatico.jpg",
+    coverUrl: "/images/books/o-programador-pragmatico.jpg",
     slug: "o-programador-pragmatico",
     totalPages: 205,
     author: {

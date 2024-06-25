@@ -13,7 +13,9 @@ export class InMemoryUsersRepository implements UsersRepository {
     const user = {
       id: '1',
       name: data.name,
+      username: data.username,
       email: data.email,
+      passwordHash: data.passwordHash,
       avatarUrl: data.avatarUrl,
       createdAt: data.createdAt,
       updatedAt: data.updatedAt,

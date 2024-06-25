@@ -1,4 +1,4 @@
-import { UserAlreadyExistsError } from './errors/user-already-exists-erro'
+import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 import { RegisterUseCase } from './register'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 

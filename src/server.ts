@@ -1,12 +1,12 @@
 import { app } from "./app";
+import { env } from "./env";
 
-const PORT = 3333;
 app.listen(
   {
-    port: PORT,
+    port: env.PORT,
     host: "0.0.0.0",
   },
   () => {
-    console.log(`🚀 server run listening on Port ${PORT} `);
+    console.log(`🚀 server run listening on Port ${env.PORT} `);
   },
 );

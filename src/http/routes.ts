@@ -1,8 +1,8 @@
 import { FastifyInstance } from 'fastify'
-import { registerController } from './controllers/register.controller'
+import { registerWithCredentialsController } from './controllers/register-with-credentials.controller'
 import { authenticateWithCredentialsController } from './controllers/authenticate-with-credentials.controller'
 
 export async function appRoutes(app: FastifyInstance) {
-  app.post('/users', registerController)
+  app.post('/users', registerWithCredentialsController)
   app.post('/sessions/credentials', authenticateWithCredentialsController)
 }

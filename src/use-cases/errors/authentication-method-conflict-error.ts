@@ -1,4 +1,4 @@
-export class AuthenticationMethodConflictError extends Error {
+export class AuthenticationMethodProviderConflictError extends Error {
   constructor() {
     super('Authentication method conflict.')
   }

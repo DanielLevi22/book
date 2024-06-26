@@ -13,8 +13,8 @@ describe('Register use case', async () => {
 
     // Act
     const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterUseCase(usersRepository)
-    const result = await registerUseCase.execute(user)
+    const sut = new RegisterUseCase(usersRepository)
+    const result = await sut.execute(user)
     // Assert
 
     expect(usersRepository.items).toHaveLength(1)

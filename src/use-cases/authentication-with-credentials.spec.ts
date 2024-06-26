@@ -1,14 +1,19 @@
 import { hash } from 'bcryptjs'
 import { AuthenticationWithCredentialsUseCase } from './authentication-with-credentials'
-import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { InvalidCrendentialsError } from './errors/invalid-credentials-error'
+import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
+
+let userRepository: InMemoryUsersRepository
+let sut: AuthenticationWithCredentialsUseCase
 
 describe('Authentication with credentials use case', async () => {
-  it('should be able to authenticate a user with valid credentials', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const sut = new AuthenticationWithCredentialsUseCase(usersRepository)
+  beforeEach(() => {
+    userRepository = new InMemoryUsersRepository()
+    sut = new AuthenticationWithCredentialsUseCase(userRepository)
+  })
 
-    await usersRepository.create({
+  it('should be able to authenticate a user with valid credentials', async () => {
+    await userRepository.create({
       name: 'John Doe',
       username: 'johndoe',
       passwordHash: await hash('password123', 6),
@@ -22,10 +27,7 @@ describe('Authentication with credentials use case', async () => {
     expect(user.id).toEqual(expect.any(String))
   })
   it('shold not be able to authenticate a user with wrong username', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const sut = new AuthenticationWithCredentialsUseCase(usersRepository)
-
-    await usersRepository.create({
+    await userRepository.create({
       name: 'John Doe',
       username: 'johndoe',
       passwordHash: await hash('password123', 6),
@@ -39,10 +41,7 @@ describe('Authentication with credentials use case', async () => {
     }).rejects.toBeInstanceOf(InvalidCrendentialsError)
   })
   it('shot not be able to authenticate a user with wrong password', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const sut = new AuthenticationWithCredentialsUseCase(usersRepository)
-
-    await usersRepository.create({
+    await userRepository.create({
       id: 'user-id',
       name: 'John Doe',
       username: 'johndoe',

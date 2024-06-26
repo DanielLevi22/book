@@ -2,9 +2,15 @@ import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 import { RegisterWithCredentialsUseCase } from './register-with-credentials'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 
+let usersRepository: InMemoryUsersRepository
+let sut: RegisterWithCredentialsUseCase
 describe('Register use case', async () => {
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new RegisterWithCredentialsUseCase(usersRepository)
+  })
+
   it('should register a new user', async () => {
-    // Arrange
     const user = {
       name: 'John Doe',
       username: 'john',
@@ -12,8 +18,7 @@ describe('Register use case', async () => {
     }
 
     // Act
-    const usersRepository = new InMemoryUsersRepository()
-    const sut = new RegisterWithCredentialsUseCase(usersRepository)
+
     const result = await sut.execute(user)
     // Assert
 
@@ -22,21 +27,16 @@ describe('Register use case', async () => {
   })
 
   it('should throw an error if the user already exists', async () => {
-    // Arrange
     const user = {
       name: 'John Doe',
       username: 'john',
       password: 'password123',
     }
 
-    // Act
-    const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterWithCredentialsUseCase(usersRepository)
-    await registerUseCase.execute(user)
+    await sut.execute(user)
 
     expect(async () => {
-      await registerUseCase.execute(user)
+      await sut.execute(user)
     }).rejects.toBeInstanceOf(UserAlreadyExistsError)
-    // Assert
   })
 })

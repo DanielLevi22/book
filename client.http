@@ -1,8 +1,20 @@
+
+### Create a new User with a credentials username:password
 POST http://localhost:3333/users
 Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "johssss@exsample.com",
+  "username": "johs",
   "password": "123456"
+}
+
+
+### Authenticated a  User with a credentials username:password
+POST http://localhost:3333/sessions/credentials
+Content-Type: application/json
+
+{
+  "username": "johs",
+  "password": "1234565"
 }

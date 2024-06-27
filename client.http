@@ -1,4 +1,6 @@
 
+
+
 ### Create a new User with a credentials username:password
 POST http://localhost:3333/users
 Content-Type: application/json
@@ -16,5 +18,9 @@ Content-Type: application/json
 
 {
   "username": "johs",
-  "password": "1234565"
+  "password": "123456"
 }
+
+### Get the user profile
+GET http://localhost:3333/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzYjMxODNhOS05YmQwLTQyZjMtYTI0NS1iZjkxNTc1M2JkOWIiLCJpYXQiOjE3MTk1MTE3MTV9.Z458k-xa8YWNd6ViUChK728cVYTqMSjTKmkEGY4XBcw

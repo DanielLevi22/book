@@ -1,13 +1,13 @@
 # To-Do de Afazeres
 
 ## Requisitos Funcionais (RF)
-
+- [x] **RF00** - Deve ser possível autenticar na plataforma com credenciais. - **alta**
 - [ ] **RF01** - Deve ser possível autenticar na plataforma com Google. - **Alta**
 - [ ] **RF02** - Deve ser possível autenticar na plataforma com Facebook. - **Baixa**
 - [ ] **RF03** - Deve ser possível entrar na plataforma sem estar autenticado. - **Média**
 - [ ] **RF04** - Deve ser possível se autenticar a qualquer momento da aplicação. - **Alta**
 - [ ] **RF05** - Deve ser possível se desautenticar. - **Média**
-- [ ] **RF06** - Deve ser possível avaliar todos os livros. - **Alta**
+- [ ] **RF06** - Deve ser possível avaliar  livro. - **Alta**
 - [ ] **RF07** - Deve ser possível listar todas as avaliações por ordem de data. - **Baixa**
 - [ ] **RF08** - Deve ser possível a própria avaliação do usuário estar sempre em primeiro lugar se ele estiver autenticado. - **Baixa**
 - [ ] **RF09** - Deve ser possível criar um post. - **Médio**

@@ -7,14 +7,14 @@
 - [ ] **RF03** - Deve ser possível entrar na plataforma sem estar autenticado. - **Média**
 - [ ] **RF04** - Deve ser possível se autenticar a qualquer momento da aplicação. - **Alta**
 - [ ] **RF05** - Deve ser possível se desautenticar. - **Média**
-- [ ] **RF06** - Deve ser possível avaliar  livro. - **Alta**
+- [x] **RF06** - Deve ser possível avaliar  livro. - **Alta**
 - [ ] **RF07** - Deve ser possível listar todas as avaliações por ordem de data. - **Baixa**
 - [ ] **RF08** - Deve ser possível a própria avaliação do usuário estar sempre em primeiro lugar se ele estiver autenticado. - **Baixa**
 - [ ] **RF09** - Deve ser possível criar um post. - **Médio**
 - [ ] **RF10** - Deve ser possível editar um post. - **Médio**
 - [ ] **RF11** - Deve ser possível listar todas as postagens. - **Alta**
 - [ ] **RF12** - Deve ser possível listar os livros mais populares. - **Baixo**
-- [ ] **RF13** - Deve ser possível visualizar um perfil de usuário se já estiver autenticado. - **Baixo**
+- [x] **RF13** - Deve ser possível visualizar um perfil de usuário se já estiver autenticado. - **Baixo**
 - [ ] **RF14** - Deve ser possível visualizar a quantidade de livros lidos do usuário se já estiver autenticado. - **Baixo**
 - [ ] **RF15** - Deve ser possível visualizar a quantidade de autores lidos do usuário se já estiver autenticado. - **Baixo**
 - [ ] **RF16** - Deve ser possível visualizar a quantidade de páginas lidas do usuário se já estiver autenticado. - **Baixo**

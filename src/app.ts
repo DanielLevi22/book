@@ -2,10 +2,49 @@ import fastify from 'fastify'
 import { ZodError } from 'zod'
 import { env } from './env'
 import fastifyJwt from '@fastify/jwt'
-import { authRoutes } from './http/controllers/auth/routes'
-import { usersRoutes } from './http/controllers/user/routes'
 import fastifyCookie from '@fastify/cookie'
-export const app = fastify()
+import fastifySwagger from '@fastify/swagger'
+import fastifySwaggerUi from '@fastify/swagger-ui'
+import {
+  jsonSchemaTransform,
+  serializerCompiler,
+  validatorCompiler,
+  ZodTypeProvider,
+} from 'fastify-type-provider-zod'
+import fastifyCors from '@fastify/cors'
+import { authenticateWithCredentialsController } from './http/controllers/auth/authenticate-with-credentials.controller'
+import { refreshController } from './http/controllers/auth/refresh-controller'
+import { registerWithCredentialsController } from './http/controllers/user/register-with-credentials.controller'
+import { profileController } from './http/controllers/user/profile.controller'
+
+export const app = fastify().withTypeProvider<ZodTypeProvider>()
+
+app.setSerializerCompiler(serializerCompiler)
+app.setValidatorCompiler(validatorCompiler)
+app.register(fastifyCors)
+app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: 'Book Rating',
+      description: 'Back-End API for Book Rating App',
+      version: '1.0.0',
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+  },
+  transform: jsonSchemaTransform,
+})
+
+app.register(fastifySwaggerUi, {
+  routePrefix: '/docs',
+})
 
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
@@ -16,8 +55,11 @@ app.register(fastifyJwt, {
   sign: { expiresIn: '10m' },
 })
 app.register(fastifyCookie)
-app.register(authRoutes)
-app.register(usersRoutes)
+
+app.register(registerWithCredentialsController)
+app.register(authenticateWithCredentialsController)
+app.register(profileController)
+app.register(refreshController)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {

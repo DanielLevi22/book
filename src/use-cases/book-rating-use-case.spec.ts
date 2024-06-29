@@ -14,7 +14,7 @@ describe('Book rating use case', async () => {
     sut = new BookRatingUseCase(bookRatingRepository, bookRepository)
   })
 
-  it('should be a to  rating a book', async () => {
+  it('should be able to  rating a book', async () => {
     bookRepository.items.push({
       id: 'book-id',
       name: 'The Great Book',
@@ -37,7 +37,7 @@ describe('Book rating use case', async () => {
     expect(bookRating.rating).toEqual(5)
     expect(bookRating.comment).toEqual('Great book')
   })
-  it('should not be a to  rating a if a book  already exists', async () => {
+  it('should not be able to  rating a if a book  already exists', async () => {
     bookRepository.items.push({
       id: 'book-id',
       name: 'The Great Book',

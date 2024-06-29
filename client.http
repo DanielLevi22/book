@@ -3,8 +3,8 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "John Doe",
-  "username": "johs",
+  "name": "Maria Doe",
+  "username": "Maria",
   "password": "123456"
 }
 
@@ -14,7 +14,7 @@ POST http://localhost:3333/sessions/credentials
 Content-Type: application/json
 
 {
-  "username": "johs",
+  "username": "Maria",
   "password": "123456"
 }
 
@@ -22,4 +22,4 @@ Content-Type: application/json
 
 
 GET http://localhost:3333/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzYjMxODNhOS05YmQwLTQyZjMtYTI0NS1iZjkxNTc1M2JkOWIiLCJpYXQiOjE3MTk1MTE3MTV9.Z458k-xa8YWNd6ViUChK728cVYTqMSjTKmkEGY4XBcw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZGYwM2IwMi1iNGRhLTQwNWMtOTAwZC03NTc5MTU5ZDQyZTEiLCJpYXQiOjE3MTk2MjcyNjgsImV4cCI6MTcxOTYyNzg2OH0.pJ4lNMu8moa83uYsukPajrnDWgqvjrwrDszaVg0n8W8

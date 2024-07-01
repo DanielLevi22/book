@@ -1,32 +1,26 @@
-// import { UsersRepository } from '@/repositories/users-repository'
-// import { InvalidCrendentialsError } from './errors/invalid-credentials-error'
-// import { compare } from 'bcryptjs'
-// import { User } from '@prisma/client'
-// interface AuthenticationWithGoogle {
-//   code: string
-// }
-// interface AuthenticationWithCredentialsResponse {
-//   user: User
-// }
+import { UsersRepository } from '@/repositories/users-repository'
+import { InvalidCrendentialsError } from './errors/invalid-credentials-error'
 
-// export class AuthenticationWithCredentialsUseCase {
-//   constructor(private userRepository: UsersRepository) {}
+import { User } from '@prisma/client'
+interface AuthenticationWithGoogleRequest {
+  email: string
+}
+interface AuthenticationWithGoogleResponse {
+  user: User
+}
 
-//   async execute({
-//     code,
-//   }: AuthenticationWithGoogle): Promise<AuthenticationWithCredentialsResponse> {
-//   //   const user = await this.userRepository.findByUsername(username)
+export class AuthenticationWithGoogleUseCase {
+  constructor(private userRepository: UsersRepository) {}
 
-//   //   if (!user || !user.passwordHash) {
-//   //     throw new InvalidCrendentialsError()
-//   //   }
+  async execute({
+    email,
+  }: AuthenticationWithGoogleRequest): Promise<AuthenticationWithGoogleResponse> {
+    const user = await this.userRepository.findByEmail(email)
 
-//   //   const doesPasswordMatches = await compare(password, user.passwordHash)
+    if (!user) {
+      throw new InvalidCrendentialsError()
+    }
 
-//   //   if (!doesPasswordMatches) {
-//   //     throw new InvalidCrendentialsError()
-//   //   }
-
-//   //   return { user }
-//   // }
-// }
+    return { user }
+  }
+}

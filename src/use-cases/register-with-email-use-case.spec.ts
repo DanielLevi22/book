@@ -16,10 +16,7 @@ describe('Register use case', async () => {
       avatarUrl: 'https://example.com/avatar.png',
     }
 
-    // Act
-
     const result = await sut.execute(user)
-    // Assert
 
     expect(usersRepository.items).toHaveLength(1)
     expect(result.user.email).toBe(user.email)

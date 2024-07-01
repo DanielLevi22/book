@@ -17,9 +17,6 @@ export async function authenticateWithGoogleController(app: FastifyInstance) {
     },
     async (request, reply) => {
       const { code } = request.body
-      if (!code) {
-        return reply.status(400).send('Code is required')
-      }
 
       const requestBody = new URLSearchParams()
       requestBody.append('code', code)

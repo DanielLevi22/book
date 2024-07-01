@@ -18,6 +18,15 @@ Content-Type: application/json
   "password": "123456"
 }
 
+### Authenticated a  User with a Google Access Token
+POST http://localhost:3333/sessions/google
+Content-Type: application/json
+
+{
+  "code": "4/0ATx3LY6U0eovZ4Q4mKUm1REYb-2AA_fS09pMPWppIalX9QL-AMV7QOrZuOmgWAngxL6ECg"
+}
+
+
 ### Get the user profile 
 
 

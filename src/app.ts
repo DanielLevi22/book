@@ -16,6 +16,7 @@ import { authenticateWithCredentialsController } from './http/controllers/auth/a
 import { refreshController } from './http/controllers/auth/refresh-controller'
 import { registerWithCredentialsController } from './http/controllers/user/register-with-credentials.controller'
 import { profileController } from './http/controllers/user/profile.controller'
+import { authenticateWithGoogleController } from './http/controllers/auth/authenticated-with-google.controller'
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -60,6 +61,7 @@ app.register(registerWithCredentialsController)
 app.register(authenticateWithCredentialsController)
 app.register(profileController)
 app.register(refreshController)
+app.register(authenticateWithGoogleController)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {

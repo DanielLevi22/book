@@ -3,7 +3,7 @@ import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { env } from '@/env'
 import { makeFetchPostUseCase } from '@/use-cases/factories/make-fetch-post-use-case'
-import { makeRegisterWithEmailUseCase } from '@/use-cases/factories/make-register-with-email-use-case'
+import { makeAuthenticateOauthUseCase } from '@/use-cases/factories/make-authenticate-oauth-use-case'
 
 export async function authenticateWithGoogleController(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
@@ -71,12 +71,43 @@ export async function authenticateWithGoogleController(app: FastifyInstance) {
           return reply.status(500).send('Failed to obtain Google access token')
         }
         console.log(decodedToken)
-        const registerWithEmail = makeRegisterWithEmailUseCase()
-        const { user } = await registerWithEmail.execute({
-          name: decodedToken.name,
+
+        const authenticatedUseCase = makeAuthenticateOauthUseCase()
+        const { user } = await authenticatedUseCase.execute({
           email: decodedToken.email,
           avatarUrl: decodedToken.picture,
+          name: decodedToken.name,
+          provider: 'GOOGLE',
+          providerId: decodedToken.sub,
         })
+        const token = await reply.jwtSign(
+          {},
+          {
+            sign: {
+              sub: user.id,
+            },
+          },
+        )
+        const refreshToken = await reply.jwtSign(
+          {},
+          {
+            sign: {
+              sub: user.id,
+              expiresIn: '7d',
+            },
+          },
+        )
+        return reply
+          .setCookie('refreshToken', refreshToken, {
+            path: '/',
+            httpOnly: true,
+            secure: true,
+            sameSite: true,
+          })
+          .status(200)
+          .send({
+            token,
+          })
       } catch (error) {
         console.error('Error fetching Google access token:', error)
         reply.status(500).send('Failed to obtain Google access token')

@@ -23,7 +23,7 @@ POST http://localhost:3333/sessions/google
 Content-Type: application/json
 
 {
-  "code": "4/0ATx3LY4JeRWz6KJ98jSfXc5FgUl8xezfDBP7Ls6-bV2x5EZsA-2mlQSAg4nApbDljjINaw"
+  "code": "4/0ATx3LY4axBaPdEuaKxoSMXhyjwhkvu2xhseYr37XGaXXkmChFTZHHBiMhNJmasMHTVTJ5w"
 }
 
 

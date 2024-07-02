@@ -1,6 +1,6 @@
 import { PrismaOauthRepository } from '@/repositories/prisma/prisma-oauth-reposytory'
 import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-repository'
-import { AuthenticationWithOauthUseCase } from '../authentication-with-Oauth'
+import { AuthenticationWithOauthUseCase } from '../authentication-with-oauth'
 
 export function makeAuthenticateOauthUseCase() {
   const oauthRepository = new PrismaOauthRepository()

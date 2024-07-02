@@ -47,7 +47,7 @@ http://localhost:3000/docs
 ```
 ## Requisitos Funcionais (RF)
 - [x] **RF00** - Deve ser possível autenticar na plataforma com credenciais. - **alta**
-- [ ] **RF01** - Deve ser possível autenticar na plataforma com Google. - **Alta**
+- [x] **RF01** - Deve ser possível autenticar na plataforma com Google. - **Alta**
 - [ ] **RF02** - Deve ser possível autenticar na plataforma com Facebook. - **Baixa**
 - [ ] **RF03** - Deve ser possível entrar na plataforma sem estar autenticado. - **Média**
 - [ ] **RF04** - Deve ser possível se autenticar a qualquer momento da aplicação. - **Alta**

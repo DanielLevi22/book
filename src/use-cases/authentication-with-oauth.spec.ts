@@ -1,7 +1,6 @@
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { AuthenticationWithOauthUseCase } from './authentication-with-oauth'
-import { InMemoryOauthRepository } from '@/repositories/in-memory/in-memory-Oauth-repository'
-
+import { InMemoryOauthRepository } from '@/repositories/in-memory/in-memory-oauth-repository'
 let oauthRepository: InMemoryOauthRepository
 let userRepository: InMemoryUsersRepository
 let sut: AuthenticationWithOauthUseCase

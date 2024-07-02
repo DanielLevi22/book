@@ -19,7 +19,7 @@ export async function getPopularBooksController(app: FastifyInstance) {
                 coverUrl: z.string(),
                 description: z.string(),
                 authorId: z.string(),
-                averageRating: z.number(),
+                averageRating: z.coerce.number(),
               }),
             ),
           }),

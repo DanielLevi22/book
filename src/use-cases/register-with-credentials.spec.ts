@@ -17,10 +17,7 @@ describe('Register use case', async () => {
       password: 'password123',
     }
 
-    // Act
-
     const result = await sut.execute(user)
-    // Assert
 
     expect(usersRepository.items).toHaveLength(1)
     expect(result.user.name).toBe(user.name)

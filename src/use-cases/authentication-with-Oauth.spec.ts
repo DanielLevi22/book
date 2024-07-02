@@ -42,4 +42,33 @@ describe('Authentication with google use case', async () => {
     })
     expect(session?.provider).toEqual('FACEBOOK')
   })
+
+  it('should be able to authenticate a user with different providers using the same email', async () => {
+    const { user } = await sut.execute({
+      email: 'johndoe@example.com',
+      provider: 'FACEBOOK',
+      providerId: '123456789',
+      avatarUrl: 'https://example.com/avatar.png',
+      name: 'John Doe',
+    })
+
+    const session = await oauthRepository.findUnique({
+      provider: 'FACEBOOK',
+      userId: user.id,
+    })
+    expect(session?.provider).toEqual('FACEBOOK')
+    const { user: user2 } = await sut.execute({
+      email: 'johndoe@example.com',
+      provider: 'GOOGLE',
+      providerId: '123456789',
+      avatarUrl: 'https://example.com/avatar.png',
+      name: 'John Doe',
+    })
+
+    const session2 = await oauthRepository.findUnique({
+      provider: 'GOOGLE',
+      userId: user2.id,
+    })
+    expect(session2?.provider).toEqual('GOOGLE')
+  })
 })

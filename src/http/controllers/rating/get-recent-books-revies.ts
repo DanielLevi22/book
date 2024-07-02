@@ -1,27 +1,38 @@
 import { makeFetchRecentReviewsUseCase } from '@/repositories/make-fetch-recent-reviews-use-case'
 import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
+import z from 'zod'
 
 export async function getRecentReviewsController(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
     '/recent-reviews',
     {
       schema: {
-        tags: ['Available Reviews'],
+        tags: ['Rating'],
         summary: 'Get recent reviews',
-        // response: {
-        //   200: z.object({
-        //     user: z.object({
-        //       id: z.string(),
-        //       name: z.string(),
-        //       username: z.string().nullable(),
-        //       email: z.string().nullable(),
-        //       avatarUrl: z.string().nullable(),
-        //       createdAt: z.string(),
-        //       updatedAt: z.string(),
-        //     }),
-        //   }),
-        // },
+        response: {
+          200: z.object({
+            recentReviews: z.array(
+              z.object({
+                id: z.string(),
+                rating: z.number(),
+                createdAt: z.date(),
+                user: z.object({
+                  name: z.string(),
+                  avatarUrl: z.string().nullable(),
+                }),
+                book: z.object({
+                  coverUrl: z.string(),
+                  name: z.string(),
+                  description: z.string(),
+                  author: z.object({
+                    name: z.string(),
+                  }),
+                }),
+              }),
+            ),
+          }),
+        },
       },
     },
     async (request, reply) => {

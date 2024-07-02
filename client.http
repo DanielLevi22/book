@@ -37,3 +37,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZGYwM2IwM
 ### Get recent reviews
 
 GET http://localhost:3333/recent-reviews
+
+
+### Get popular books
+
+GET http://localhost:3333/popular-books

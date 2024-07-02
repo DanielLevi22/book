@@ -21,6 +21,6 @@ describe('Fetch post use case', async () => {
       },
     })
     console.log(reponse)
-    expect(reponse).toBeTruthy()
+    await expect(reponse).toBeTruthy()
   })
 })

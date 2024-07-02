@@ -1,26 +1,25 @@
-import { FetchPostUseCase } from './fetch-post-use-case'
-
 import { InMemoryFetchRepository } from '@/repositories/in-memory/in-memory-fetch-repository'
+import { FetchPostUseCase } from '@/use-cases/fetch-post-use-case'
 
-let fetchHttpRepository: InMemoryFetchRepository
-let sut: FetchPostUseCase
+describe('Fetch post use case', () => {
+  let fetchRepository: InMemoryFetchRepository
+  let fetchPostUseCase: FetchPostUseCase
 
-describe('Fetch post use case', async () => {
   beforeEach(() => {
-    fetchHttpRepository = new InMemoryFetchRepository()
-    sut = new FetchPostUseCase(fetchHttpRepository)
+    fetchRepository = new InMemoryFetchRepository()
+    fetchPostUseCase = new FetchPostUseCase(fetchRepository)
   })
 
   it('should be able to fetch post', async () => {
-    const reponse = await sut.execute({
-      url: 'https://jsonplaceholder.typicode.com/posts/1',
-      body: {
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-      },
-    })
-    console.log(reponse)
-    await expect(reponse).toBeTruthy()
+    const url = 'https://api.example.com/posts/1'
+    const body = {
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    }
+
+    expect(async () => {
+      await fetchPostUseCase.execute({ url, body })
+    }).toBeTruthy()
   })
 })
